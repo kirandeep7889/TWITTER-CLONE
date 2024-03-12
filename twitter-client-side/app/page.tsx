@@ -1,3 +1,4 @@
+"use Client"
 import Image from "next/image";
 import React from "react";
 import { FaTwitter } from "react-icons/fa6";
@@ -6,6 +7,8 @@ import { BiHash } from "react-icons/bi";
 import { BsBell, BsBookmark, BsEnvelope } from "react-icons/bs";
 import FeedCard from "./FeedCard";
 import { SlOptions } from "react-icons/sl";
+import { GoogleLogin } from "@react-oauth/google";
+import GoogleLoginButton from "./GoogleLoginButton";
 
 
 
@@ -49,7 +52,9 @@ const sidebarMenuItems: TwitterSidebarButton[]=[
 
 ]
 
+
 export default function Home() {
+
   return (
     <div>
       <div className="grid grid-cols-12 h-screen w-screen px-56">
@@ -81,9 +86,13 @@ export default function Home() {
           <FeedCard/>
           <FeedCard/>
           <FeedCard/>
-
         </div>
-        <div className="col-span-3"></div>
+        <div className="col-span-3 p-3">
+          <div className=" p-3 bg-slate-700 rounded-lg">
+            <h1 className="my-2 text-2xl font-semibold">New to Twitter?</h1>
+            <GoogleLoginButton/>
+          </div>
+        </div>
       </div>
           
     </div>
